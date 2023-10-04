@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 export interface Usuario {
@@ -23,9 +23,10 @@ export class LoginFormComponent {
     correo: new FormControl(''),
   });
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   onSubmit(): void {
     const nombreUsaurio = this.usuarioNuevo.get('nombre')?.value;
+    this.router.navigate(['mensaje', nombreUsaurio]);
   }
 }
