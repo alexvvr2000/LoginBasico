@@ -1,45 +1,50 @@
 <section>
   <div class="container">
     <div id="login">
-      <ion-grid>
-        <ion-row
-          ><ion-col offset="1"><h1>Favor de introducir tus datos</h1> </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
+      <form novalidate [formGroup]="usuarioNuevo" (ngSubmit)="onSubmit()">
+        <ion-grid>
+          <ion-row
+            ><ion-col offset="1"
+              ><h1>Favor de introducir tus datos</h1>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-col
+                ><ion-input
+                  label="Nombre"
+                  label-placement="floating"
+                  fill="outline"
+                  formControlName="nombre"
+                ></ion-input> </ion-col
+            ></ion-col>
+          </ion-row>
+          <ion-row>
             <ion-col
               ><ion-input
-                label="Nombre"
+                label="Correo"
                 label-placement="floating"
                 fill="outline"
-              ></ion-input> </ion-col
-          ></ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col
-            ><ion-input
-              label="Correo"
-              label-placement="floating"
-              fill="outline"
-            ></ion-input>
-          </ion-col>
-          <ion-col
-            ><ion-input
-              label="Contraseña"
-              label-placement="floating"
-              fill="outline"
-              type="password"
-            ></ion-input>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col>
-            <ion-button routerLink="/mensaje/." expand="block"
-              >Entrar</ion-button
-            >
-          </ion-col>
-        </ion-row>
-      </ion-grid>
+                formControlName="correo"
+              ></ion-input>
+            </ion-col>
+            <ion-col
+              ><ion-input
+                label="Contraseña"
+                label-placement="floating"
+                fill="outline"
+                type="password"
+                formControlName="clave"
+              ></ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-button expand="block" type="submit">Entrar</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
     </div>
   </div>
 </section>
