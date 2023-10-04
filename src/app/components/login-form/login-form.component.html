@@ -1,7 +1,12 @@
 <section>
   <div class="container">
     <div id="login">
-      <form novalidate [formGroup]="usuarioNuevo" (ngSubmit)="onSubmit()">
+      <form
+        novalidate
+        [formGroup]="usuarioNuevoForm"
+        (ngSubmit)="onSubmit()"
+        name="usuario"
+      >
         <ion-grid>
           <ion-row
             ><ion-col offset="1"
@@ -40,7 +45,10 @@
           </ion-row>
           <ion-row>
             <ion-col>
-              <ion-button [disabled]="!botonActivo" expand="block" type="submit"
+              <ion-button
+                [disabled]="!usuarioNuevoForm.valid"
+                expand="block"
+                type="submit"
                 >Entrar</ion-button
               >
             </ion-col>
