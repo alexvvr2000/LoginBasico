@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -10,5 +10,8 @@ import { IonicModule } from '@ionic/angular';
   standalone: true,
 })
 export class MensajeComponent {
-  constructor() {}
+  nombre: string | null = '';
+  constructor(route: ActivatedRoute) {
+    this.nombre = route.snapshot.paramMap.get('nombre');
+  }
 }
