@@ -22,6 +22,7 @@ export class LoginFormComponent {
     clave: new FormControl(''),
     correo: new FormControl(''),
   });
+  botonActivo: boolean = false;
 
   constructor(private router: Router) {}
 
