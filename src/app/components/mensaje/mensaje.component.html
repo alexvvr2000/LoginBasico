@@ -1,3 +1,18 @@
-<div class="container">
-  <h1>Bienvenido {{ nombre }}</h1>
-</div>
+<section>
+  <div class="container">
+    <div id="mensaje">
+      <ion-grid>
+        <ion-row
+          ><ion-col>
+            <h1>Bienvenido {{ nombre }}</h1></ion-col
+          ></ion-row
+        >
+        <ion-row>
+          <ion-col offset="1">
+            <ion-button routerLink="/login"> Regresar al inicio </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</section>
